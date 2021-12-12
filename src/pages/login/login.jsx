@@ -2,7 +2,7 @@ import React from "react";
 import Login from "../../components/login/login";
 
 
-const register = () => {
+const login = () => {
 
   return (
     <main>
@@ -13,4 +13,4 @@ const register = () => {
 
 }
 
-export default register;
+export default login;
