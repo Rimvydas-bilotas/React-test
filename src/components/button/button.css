@@ -1,0 +1,27 @@
+.orange {
+    padding: 1rem 3rem;
+    background-color: rgb(251, 129, 22);
+    border: solid 1px rgb(251, 129, 22);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin: 0 0.5rem;
+  }
+  
+  .white {
+    padding: 1rem 3rem;
+    background-color: white;
+    border: solid 1px rgb(251, 129, 22);
+    border-radius: 5px;
+    color: rgb(251, 129, 22);
+    font-weight: bold;
+    margin: 0 0.5rem;
+  }
+  
+  .orange:hover {
+    background-color: rgb(252, 192, 140);
+  }
+  
+  .white:hover {
+    background-color: rgb(252, 192, 140);
+  }
