@@ -6,7 +6,7 @@ const towns = () => {
 
   return (
     <main>
-      <h1>Saugumo indikatorius, parodantis, kiek ir kokio sunkumo nusikaltimu ivyksta kiekviename miestelyje. Pasirinkite miestele del detalizuoto ivykiu saraso.</h1>
+      <h1>Saugumo indikatorius, parodantis, kiek ir kokio sunkumo nusikaltimu ivyksta kiekviename miestelyje. Pasirinkite miesteli del detalizuoto ivykiu saraso.</h1>
      <Towns />
     </main>
   )
