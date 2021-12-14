@@ -4,6 +4,7 @@ import Home from './pages/home/home';
 import Register from './pages/register/register.jsx';
 import Login from './pages/login/login.jsx';
 import Towns from './pages/towns/towns.jsx';
+import PostCrime from './pages/crimes/postCrime.jsx';
 import { Routes, Route } from 'react-router';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/towns" element={<Towns />} />
+          <Route path="/crimes/register" element={<PostCrime />} />
         </Routes>
       </div>
   

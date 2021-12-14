@@ -39,7 +39,7 @@ let navigate = useNavigate();
         setName('');
         setPassword('');
         localStorage.setItem('token', data.data);
-        alert('You have been registered');
+        alert('You are logged in');
         navigate('/')
       })
       .catch((error) => {
