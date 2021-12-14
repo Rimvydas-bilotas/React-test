@@ -6,7 +6,7 @@ const crimes = () => {
 
   return (
     <main>
-      <h1>Detalizuotas nusikaltimu sarasas</h1>
+      <h1>Detalizuotas nusikaltimų sąrašas</h1>
      <Crimes />
     </main>
   )

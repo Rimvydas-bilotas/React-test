@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './crimes.css';
 import Button from '../button/button';
-// import { useNavigate  } from 'react-router';
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
 
 const AddCrime = () => {
 
-// let navigate = useNavigate();
   const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
   const [town, setTown] = useState('');
@@ -80,7 +78,7 @@ const AddCrime = () => {
         setTown('');
         setSeverity('');
         alert('Crime registered');
-        // window.location.reload();
+        window.location.reload();
       })
       .catch((error) => {
         alert('Failed to register crime! Please contact admin');

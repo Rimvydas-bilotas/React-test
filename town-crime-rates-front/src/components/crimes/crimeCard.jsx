@@ -1,7 +1,6 @@
 import React from 'react';
 import './crimes.css';
 import Button from '../button/button';
-// import { Link } from 'react-router-dom';
 
 const CrimeCard = ({ crime }) => {
   const isloggedin = localStorage.getItem('token');
@@ -9,9 +8,7 @@ const CrimeCard = ({ crime }) => {
   const date = datestring[0];
   const onClickHandler = (event) => {
     event.preventDefault();
-    // let data = {
-    //   id: crime.id,
-    // };
+
 
     const options = {
       method: 'DELETE',
@@ -19,7 +16,6 @@ const CrimeCard = ({ crime }) => {
         'Content-type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
       },
-      // body: JSON.stringify(data),
     };
 
     fetch(`http://localhost:8080/crimes/${crime.id}`, options)

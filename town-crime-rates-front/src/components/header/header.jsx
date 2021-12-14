@@ -19,11 +19,11 @@ const onClickHandler = (event) => {
     <header>
       <div id="header">
         <div id="nav">
-          {!isloggedin ? <Link to="/register">Register</Link> : null}
-          {!isloggedin ? <Link to="/login">Sign in</Link> : null}
-          <Link to="/towns">Town list</Link>
-          {isloggedin ? <Link to="/crimes/register">Register a crime</Link> : null}
-          {isloggedin ? <Button type="button" text="Sign out" className="orange" onClick={onClickHandler} /> : null}
+          {!isloggedin ? <Link to="/register">Registracija</Link> : null}
+          {!isloggedin ? <Link to="/login">Prisijungti</Link> : null}
+          <Link to="/towns">Miestų sąrašas</Link>
+          {isloggedin ? <Link to="/crimes/register">Regsitruoti įvykį</Link> : null}
+          {isloggedin ? <Button type="button" text="Atsijungti" className="orange" onClick={onClickHandler} /> : null}
         </div>
       </div>
 

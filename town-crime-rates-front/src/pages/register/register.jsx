@@ -6,7 +6,7 @@ const register = () => {
 
   return (
     <main>
-      <h1>Register yourself please</h1>
+      <h1>Prašome įvesti norimą slapyvardį ir slaptažodį</h1>
      <Register />
     </main>
   )

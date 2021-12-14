@@ -6,7 +6,7 @@ const login = () => {
 
   return (
     <main>
-      <h1>Please sign in</h1>
+      <h1>Prašome įvesti savo slapyvardį ir slaptažodį</h1>
      <Login />
     </main>
   )
