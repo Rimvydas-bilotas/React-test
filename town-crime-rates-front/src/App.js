@@ -24,6 +24,7 @@ function App() {
           <Route path="/crimes/register" element={<PostCrime />} />
           <Route path="/crimes/:townId" element={<Crimes />} />
         </Routes>
+        
       </div>
   
   );
