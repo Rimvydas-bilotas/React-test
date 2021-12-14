@@ -4,8 +4,20 @@
     padding: 1rem;
     border: 2px solid rgb(2, 2, 2);
     border-radius: 50px;
-    background-color: rgb(54, 52, 52)
+    background-color: rgb(54, 52, 52);
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
   .town_card > h4 {
       margin: 10px;
   }
+
+  @keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
