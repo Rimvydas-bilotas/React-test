@@ -48,8 +48,8 @@ let navigate = useNavigate();
 
   return (
     <form id="login" onSubmit={onClickHandler}>
-      <input type="text" name="name" placeholder="Name" onChange={(event) => setName(event.target.value)} />
-      <input type="password" name="password" placeholder="At least 5 symbols" minLength="5" onChange={(event) => setPassword(event.target.value)} />
+      <input type="text" name="name" placeholder="Slapyvardis" minLength="1" onChange={(event) => setName(event.target.value)} />
+      <input type="password" name="password" placeholder="Mažiausiai 5 simboliai" minLength="5" onChange={(event) => setPassword(event.target.value)} />
       <Button type="submit" text="Register" className="blue" />
     </form>
   )

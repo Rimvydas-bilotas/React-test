@@ -1,4 +1,9 @@
+# getting started on my project
 
+When files are downloaded, run npm i seperately in api-crime and town-crime-rates-front folders.
+Then set up server and in it setup mysql tables (check list of table under # mysql tables).
+Once server is up and running and mysql tables are created, input login to server info into .env file (check .env setup in # .env file should consist of:)
+Lastly update towns, crime_severity and carcrash_factor tables in sql. These table are no accessible from site. They are used to fill certain fields in site.
 
 # react dependencies:
 "dependencies": {
@@ -35,17 +40,24 @@ carincidents (id, description, date, town(town.id), contributingFactor(carcrash_
 crime_severity (id(primary), description)
 carcrash_factor (id(primary), description)
 
+# active routes are:
+
+        POST /register
+        POST /login
+        GET /towns
+        POST /crimes (with authentification)
+        GET /crimes/:townId
+        DELETE /crimes/:crimeId (with authentification)
+        GET /severities
+
 # .env file should consist of:
 DB_HOST=
 DB_USER=
 DB_PASS=
 DB_DB=
 DB_PORT=
-PORT=
+PORT=8080
 JWT_SECRET_KEY=
-
-
-
 
 # ReactJS instructions
 
