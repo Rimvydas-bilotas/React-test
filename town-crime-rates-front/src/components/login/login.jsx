@@ -40,7 +40,7 @@ let navigate = useNavigate();
         setPassword('');
         localStorage.setItem('token', data.data);
         alert('You are logged in');
-        navigate('/')
+        navigate('/towns')
       })
       .catch((error) => {
         if (error.data) {
