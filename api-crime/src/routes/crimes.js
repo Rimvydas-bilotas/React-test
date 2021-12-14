@@ -21,21 +21,31 @@ const handlePostCrime = async (req, res) => {
   }
 };
 
-const handleGetAccount = async (req, res) => {
+const handleGetCrimes = async (req, res) => {
   try {
-    let data;
-    const userId = req.user.userid;
-    if (req.user) {
-      data = await crimesEntity.getAccounts(userId);
-    }
+    const { townId } = req.params;
+    const data = await crimesEntity.getCrimes(townId);
     res.status(200).send(data);
   } catch (error) {
     res.status(500).send(error);
   }
 };
 
+const handleDeleteCrime = async (req, res) => {
+  try {
+    let data;
+    if (req.user) {
+      const { crimeId } = req.params;
+      data = crimesEntity.deleteCrime(crimeId);
+    }
+    res.send({ message: 'Succsessfully deleted the item', data });
+  } catch (e) {
+    res.status(500).json({ e });
+  }
+};
+
 router.post('/crimes', isAuthenticated, handlePostCrime);
-router.get('/crimes:townId', isAuthenticated, handleGetAccount);
-router.delete('/crimes', isAuthenticated, handleGetAccount);
+router.get('/crimes/:townId', handleGetCrimes);
+router.delete('/crimes/:crimeId', isAuthenticated, handleDeleteCrime);
 
 module.exports = router;

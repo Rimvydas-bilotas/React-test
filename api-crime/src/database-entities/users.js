@@ -26,12 +26,13 @@ const registerUser = async (name, password) => {
 
 const loginUser = async (name, password) => {
   try {
+    const error = 'Could not authenticate the user. Password or name is incorrect.';
     const con = await mysql.createConnection(dbConfig);
     const [result] = await con.execute('SELECT * FROM users WHERE name = ?', [name]);
     await con.end();
     const doesPasswordMatch = bcrypt.compareSync(password, result[0].password);
     if (!doesPasswordMatch) {
-      return 'Could not authenticate the user. Password or name is incorrect.';
+      throw error;
     }
     const token = jwt.sign(
       {
@@ -40,8 +41,9 @@ const loginUser = async (name, password) => {
       secretKey,
     );
     return token;
+    // eslint-disable-next-line no-return-assign
   } catch (error) {
-    return error;
+    return error.message;
   }
 };
 
