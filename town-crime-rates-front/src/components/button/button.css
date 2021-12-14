@@ -1,27 +1,17 @@
-.orange {
+.blue {
     padding: 1rem 3rem;
-    background-color: rgb(251, 129, 22);
-    border: solid 1px rgb(251, 129, 22);
+    background-color: rgb(18, 54, 102);
+    border: solid 1px rgb(6, 44, 94);
     border-radius: 20px;
-    color: white;
+    color: whitesmoke;
     font-weight: bold;
     margin: 0 0.5rem;
   }
   
-  .white {
-    padding: 1rem 3rem;
-    background-color: white;
-    border: solid 1px rgb(251, 129, 22);
-    border-radius: 5px;
-    color: rgb(251, 129, 22);
-    font-weight: bold;
-    margin: 0 0.5rem;
+  .blue:hover {
+    background-color: rgb(37, 82, 141);
   }
   
-  .orange:hover {
-    background-color: rgb(252, 192, 140);
-  }
-  
-  .white:hover {
-    background-color: rgb(252, 192, 140);
+  .blue:active {
+    background-color: rgb(49, 112, 194);
   }

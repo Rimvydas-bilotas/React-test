@@ -23,7 +23,7 @@ const onClickHandler = (event) => {
           {!isloggedin ? <Link to="/login">Prisijungti</Link> : null}
           <Link to="/towns">Miestų sąrašas</Link>
           {isloggedin ? <Link to="/crimes/register">Regsitruoti įvykį</Link> : null}
-          {isloggedin ? <Button type="button" text="Atsijungti" className="orange" onClick={onClickHandler} /> : null}
+          {isloggedin ? <Button type="button" text="Atsijungti" className="blue" onClick={onClickHandler} /> : null}
         </div>
       </div>
 

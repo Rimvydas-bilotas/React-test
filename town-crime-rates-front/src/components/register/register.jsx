@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './register.css';
+import '../login/login.css';
 import Button from '../button/button';
 import { useNavigate  } from 'react-router';
 
@@ -47,10 +47,10 @@ let navigate = useNavigate();
   };
 
   return (
-    <form onSubmit={onClickHandler}>
+    <form id="login" onSubmit={onClickHandler}>
       <input type="text" name="name" placeholder="Name" onChange={(event) => setName(event.target.value)} />
       <input type="password" name="password" placeholder="At least 5 symbols" minLength="5" onChange={(event) => setPassword(event.target.value)} />
-      <Button type="submit" text="Register" className="orange" />
+      <Button type="submit" text="Register" className="blue" />
     </form>
   )
 }

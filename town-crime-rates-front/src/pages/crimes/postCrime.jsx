@@ -6,7 +6,7 @@ const PostCrime = () => {
 
   return (
     <main>
-      <h1>Registruokita įvykį</h1>
+      <h1>Registruokite įvykį</h1>
      <AddCrime />
     </main>
   )

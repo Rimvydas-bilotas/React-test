@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './crimes.css';
+import '../login/login.css';
 import Button from '../button/button';
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
@@ -86,13 +86,13 @@ const AddCrime = () => {
   };
 
   return (
-    <form id="form" onSubmit={onClickHandler}>
+    <form id="login" onSubmit={onClickHandler}>
       <textarea className = "textarea"  name="description" placeholder='Add a short description of the crime' onChange={(event) => setDescription(event.target.value)} />
-      <input type="date" name="date" placeholder="Date" onChange={(event) => setDate(event.target.value)} />
+      <input className='date_input' type="date" name="date" placeholder="Date" onChange={(event) => setDate(event.target.value)} />
        {/* siuo metu nepavyksta is dropdown meniu imesti reiksmiu i body */}
-      <Dropdown name='town' options={options2} placeholder="Select a town" onSelect={(event) => setTown(event.target.value)} />
-      <Dropdown name='severity' options={options} placeholder="Select an severity" onSelect={(event) => setSeverity(event.target.value)} />
-      <Button type="submit" text="Register" className="orange" />
+      <Dropdown className='dropdown_menu' name='town' options={options2} placeholder="Select a town" onSelect={(event) => setTown(event.target.value)} />
+      <Dropdown className='dropdown_menu' name='severity' options={options} placeholder="Select an severity" onSelect={(event) => setSeverity(event.target.value)} />
+      <Button type="submit" text="Register" className="blue" />
     </form>
   )
 }

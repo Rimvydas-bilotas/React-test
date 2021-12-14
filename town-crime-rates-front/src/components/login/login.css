@@ -1,0 +1,35 @@
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#login > input {
+    width: 50%;
+    height: 2rem;
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 3px rgb(4, 18, 85);
+}
+
+#login > input:active {
+    border: solid 1px rgb(3, 10, 48);
+}
+
+#login > textarea {
+    border-radius: 10px;
+    border: solid 3px rgb(4, 18, 85);
+}
+
+#login > .date_input, #login > .dropdown_menu {
+    width: 25%;
+}
+
+@media only screen and (max-width: 600px) {
+    #login > input {
+      width: 90%;
+      height: 2rem;
+    }
+    #login > .date_input, #login > .dropdown_menu {
+        width: 70%;
+    }
+  }

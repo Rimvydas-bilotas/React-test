@@ -43,7 +43,7 @@ const CrimeCard = ({ crime }) => {
       <h4>{date}</h4>
       <h4>{crime.name}</h4>
       <h4>{crime.severity + '- ' + crime.severity_description}</h4>
-      {isloggedin ? <Button type="button" text="Delete the case" className="orange" onClick={onClickHandler} /> : null}
+      {isloggedin ? <Button type="button" text="Trinti įvykį" className="blue" onClick={onClickHandler} /> : null}
     </div>
   )
 }
