@@ -19,9 +19,13 @@ const handleLoginUser = async (req, res) => {
   try {
     const { name, password } = req.body;
     const data = await usersEntity.loginUser(name, password);
-    return res.send({ message: 'Succsessfully logged in', data });
+    if (data.error) {
+      throw new Error('Something went wrong');
+    } else {
+      return res.send({ message: 'Succsessfully logged in', data });
+    }
   } catch (error) {
-    return res.status(500).send(error);
+    return res.status(401).send(error);
   }
 };
 

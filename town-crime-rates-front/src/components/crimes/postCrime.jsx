@@ -78,7 +78,7 @@ const AddCrime = () => {
         setTown('');
         setSeverity('');
         alert('Crime registered');
-        window.location.reload();
+        // window.location.reload();
       })
       .catch((error) => {
         alert('Failed to register crime! Please contact admin');
@@ -90,9 +90,9 @@ const AddCrime = () => {
       <textarea className = "textarea"  name="description" placeholder='Add a short description of the crime' onChange={(event) => setDescription(event.target.value)} />
       <input className='date_input' type="date" name="date" placeholder="Date" onChange={(event) => setDate(event.target.value)} />
        {/* siuo metu nepavyksta is dropdown meniu imesti reiksmiu i body */}
-      <Dropdown className='dropdown_menu' name='town' options={options2} placeholder="Select a town" onSelect={(event) => setTown(event.target.value)} />
-      <Dropdown className='dropdown_menu' name='severity' options={options} placeholder="Select an severity" onSelect={(event) => setSeverity(event.target.value)} />
-      <Button type="submit" text="Register" className="blue" />
+      <Dropdown className='dropdown_menu' name='town' options={options2} placeholder="Select a town"  onSelect={(event) => setTown(event.target.value)} />
+      <Dropdown select className='dropdown_menu' name='severity' options={options} placeholder="Select an severity" onSelect={(event) => setSeverity(event.target.value)} />
+      <Button type="submit" text="Registruoti" className="blue" />
     </form>
   )
 }

@@ -29,9 +29,9 @@ let navigate = useNavigate();
       .then((response) => {
         if (!response.ok) {
           return response.json().then((data) => {
-            const error = new Error('Something went wrong!');
-            error.data = data;
-            throw error;});
+            setName('');
+            setPassword('');
+            return;});
         }
         return response.json();
       })

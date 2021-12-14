@@ -1,4 +1,53 @@
-# Getting Started with Create React App
+
+
+# react dependencies:
+"dependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-dropdown": "^1.9.2",
+    "react-router": "^6.1.1",
+    "react-router-dom": "^6.1.1",
+    "react-scripts": "4.0.3",
+    "react-star-ratings": "^2.3.0",
+    "web-vitals": "^1.1.2"
+  }
+
+# backend dependencies: 
+{
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3"
+}
+
+# mysql tables
+
+This project runs on 4 tables (6 if we add car accidents)
+users (id, name, password)
+towns (id(primary), name, population)
+crimes (id, description, date, town (town.id), severity(crime_severity.id))
+carincidents (id, description, date, town(town.id), contributingFactor(carcrash_factor.id))
+crime_severity (id(primary), description)
+carcrash_factor (id(primary), description)
+
+# .env file should consist of:
+DB_HOST=
+DB_USER=
+DB_PASS=
+DB_DB=
+DB_PORT=
+PORT=
+JWT_SECRET_KEY=
+
+
+
+
+# ReactJS instructions
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

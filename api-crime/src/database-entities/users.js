@@ -30,17 +30,20 @@ const loginUser = async (name, password) => {
     const con = await mysql.createConnection(dbConfig);
     const [result] = await con.execute('SELECT * FROM users WHERE name = ?', [name]);
     await con.end();
-    const doesPasswordMatch = bcrypt.compareSync(password, result[0].password);
-    if (!doesPasswordMatch) {
-      throw error;
+    if (result[0]) {
+      const doesPasswordMatch = bcrypt.compareSync(password, result[0].password);
+      if (!doesPasswordMatch) {
+        throw error;
+      }
+      const token = jwt.sign(
+        {
+          userid: result[0].id,
+        },
+        secretKey,
+      );
+      return token;
     }
-    const token = jwt.sign(
-      {
-        userid: result[0].id,
-      },
-      secretKey,
-    );
-    return token;
+    throw error;
     // eslint-disable-next-line no-return-assign
   } catch (error) {
     return error.message;

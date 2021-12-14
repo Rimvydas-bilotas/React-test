@@ -13,9 +13,14 @@ const handlePostCrime = async (req, res) => {
       const {
         description, date, town, severity,
       } = req.body;
-      data = await crimesEntity.postCrime(description, date, town, severity);
+      const check = 0;
+      data = await crimesEntity.postCrime(description, date, town, severity, check);
     }
-    res.status(200).send(data);
+    if (data.error) {
+      throw new Error('Something went wrong');
+    } else {
+      res.status(200).send(data);
+    }
   } catch (error) {
     res.status(500).send(error);
   }
@@ -25,7 +30,11 @@ const handleGetCrimes = async (req, res) => {
   try {
     const { townId } = req.params;
     const data = await crimesEntity.getCrimes(townId);
-    res.status(200).send(data);
+    if (data.error) {
+      throw new Error('Something went wrong');
+    } else {
+      res.status(200).send(data);
+    }
   } catch (error) {
     res.status(500).send(error);
   }

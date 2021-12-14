@@ -5,13 +5,9 @@ const { dbConfig } = require('../config');
 const postCrime = async (description, date, town, severity) => {
   try {
     const conn = await mysql.createConnection(dbConfig);
-    const [result] = await conn.execute('INSERT INTO crimes (description, date, town, severity) VALUES (?, ?, ?, ?)', [description, date, town, severity]);
+    const [data] = await conn.execute('INSERT INTO crimes (description, date, town, severity) VALUES (?, ?, ?, ?)', [description, date, town, severity]);
     await conn.end();
-    if (!result) {
-      throw new Error('database failed to connect');
-    } else {
-      return result;
-    }
+    return data.push();
   } catch (error) {
     return ({ error });
   }
