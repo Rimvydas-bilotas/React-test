@@ -28,7 +28,6 @@ const deleteCrime = async (crimeId) => {
   try {
     const con = await mysql.createConnection(dbConfig);
     const [rows] = await con.execute('DELETE FROM crimes WHERE id = ?', [crimeId]);
-    console.log('deleted');
     await con.end();
     return rows;
   } catch (e) {
