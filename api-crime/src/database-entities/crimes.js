@@ -16,7 +16,7 @@ const postCrime = async (description, date, town, severity) => {
 const getCrimes = async (townId) => {
   try {
     const con = await mysql.createConnection(dbConfig);
-    const [result] = await con.execute('SELECT crimes.id, crimes.description, crimes.date, crimes.severity FROM towns left join crimes on towns.id=crimes.town where towns.id=?;', [townId]);
+    const [result] = await con.execute('SELECT crimes.id, towns.name, crimes.description, crimes.date, crimes.severity, crime_severity.description AS severity_description FROM towns left join crimes on towns.id=crimes.town left join crime_severity on crimes.severity = crime_severity.id where towns.id=?;', [townId]);
     await con.end();
     return result;
   } catch (error) {
@@ -30,8 +30,8 @@ const deleteCrime = async (crimeId) => {
     const [rows] = await con.execute('DELETE FROM crimes WHERE id = ?', [crimeId]);
     await con.end();
     return rows;
-  } catch (e) {
-    return e;
+  } catch (error) {
+    return error;
   }
 };
 
