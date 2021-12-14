@@ -1,7 +1,9 @@
 #header {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     border-bottom: 1px rgb(194, 192, 192) solid;
+    padding: 10px 5px;
   }
   
   #nav {

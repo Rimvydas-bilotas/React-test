@@ -26,7 +26,7 @@ const AddCrime = () => {
   }, []);
 
   const options = severities.map((severity) => (
-    {value: severity.id, label: severity.description}
+    {value: String(severity.id), label: severity.description}
   ))
 
   const [towns, setTowns] = useState([]);
@@ -80,7 +80,7 @@ const AddCrime = () => {
         setTown('');
         setSeverity('');
         alert('Crime registered');
-        // navigate('/')
+        // window.location.reload();
       })
       .catch((error) => {
         alert('Failed to register crime! Please contact admin');
@@ -88,9 +88,10 @@ const AddCrime = () => {
   };
 
   return (
-    <form onSubmit={onClickHandler}>
-      <textarea  name="description" placeholder='Add a short description of the crime' onChange={(event) => setDescription(event.target.value)} />
+    <form id="form" onSubmit={onClickHandler}>
+      <textarea className = "textarea"  name="description" placeholder='Add a short description of the crime' onChange={(event) => setDescription(event.target.value)} />
       <input type="date" name="date" placeholder="Date" onChange={(event) => setDate(event.target.value)} />
+       {/* siuo metu nepavyksta is dropdown meniu imesti reiksmiu i body */}
       <Dropdown name='town' options={options2} placeholder="Select a town" onSelect={(event) => setTown(event.target.value)} />
       <Dropdown name='severity' options={options} placeholder="Select an severity" onSelect={(event) => setSeverity(event.target.value)} />
       <Button type="submit" text="Register" className="orange" />

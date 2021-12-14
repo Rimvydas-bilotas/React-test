@@ -7,7 +7,11 @@ const postCrime = async (description, date, town, severity) => {
     const conn = await mysql.createConnection(dbConfig);
     const [result] = await conn.execute('INSERT INTO crimes (description, date, town, severity) VALUES (?, ?, ?, ?)', [description, date, town, severity]);
     await conn.end();
-    return result;
+    if (!result) {
+      throw new Error('database failed to connect');
+    } else {
+      return result;
+    }
   } catch (error) {
     return ({ error });
   }
